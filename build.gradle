@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+defaultTasks 'clean', 'build'
+group 'coyote'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url "https://dl.bintray.com/sdcote/maven" }
+    mavenCentral()
+}
+
+
+ext {
+    dataFrameVersion = '1.0.5'
+    junitVersion = '4.12'
+    httpclientVersion = '4.5.3'
+}
+dependencies {
+    compile "coyote:DataFrame:$dataFrameVersion"
+    testCompile "junit:junit:$junitVersion"
+    testCompile "org.apache.httpcomponents:httpclient:$httpclientVersion"
+    testCompile "org.apache.httpcomponents:httpmime:$httpclientVersion"
+}
