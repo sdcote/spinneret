@@ -117,7 +117,7 @@ public class TestResponders {
     HttpEntity entity = response.getEntity();
     String string = new String(readContents(entity), StandardCharsets.UTF_8);
     System.out.println(string);
-    assertEquals("Error: java.lang.InstantiationException : coyote.commons.network.http.responder.Responder", string);
+    assertEquals("Error: java.lang.InstantiationException : coyote.spinneret.responder.Responder", string);
     response.close();
   }
 
